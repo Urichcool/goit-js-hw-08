@@ -7,8 +7,10 @@ const formData = {};
 populateFeedback();
 feedBackEl.addEventListener('submit', e => {
     e.preventDefault();
-     localStorage.removeItem('feedback-form-state');
-    e.currentTarget.reset();
+  localStorage.removeItem('feedback-form-state');
+   formData.email = emailEl.value;
+   formData.message = messageEl.value;
+  e.currentTarget.reset();
     console.log(formData);
 })
 feedBackEl.addEventListener('input', throttle(e => {
